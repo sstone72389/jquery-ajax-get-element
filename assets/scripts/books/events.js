@@ -10,9 +10,10 @@ const booksUi = require('./ui.js');
 // button is clicked
 const onGetBooks = function (event) {
   event.preventDefault();
-    booksApi.index()
-      .then(booksUi.onSuccess)
-      .catch(booksUi.onError);
+
+  booksApi.index()
+  .then(booksUi.onSuccess)
+  .catch(booksUi.onError);
 };
 
 module.exports = {
