@@ -17,6 +17,6 @@ const bookEvents = require('./books/events');
 
 // On document ready
 $(() => {
-  $('.books').on('submit', bookEvents.onGetBooks)
+  $('.books').on('submit', bookEvents.onGetBooks);
 });
 

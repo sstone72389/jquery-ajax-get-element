@@ -10,5 +10,5 @@ const index = function () {
 };
 
 module.exports = {
-  index
+  index,
 };
