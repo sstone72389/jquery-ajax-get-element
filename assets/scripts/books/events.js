@@ -11,7 +11,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 // button is clicked
 const onGetBooks = function (event) {
   event.preventDefault()
-  const book = getFormFields($('#book-search'))
+  const book = getFormFields(event.target).book
 
   if (book.id.length === 0) {
     booksApi.index()
