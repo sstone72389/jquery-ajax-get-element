@@ -2,6 +2,7 @@
 
 const booksApi = require('./api.js')
 const booksUi = require('./ui.js')
+const getFormFields = require('../../../lib/get-form-fields')
 
 // get in the habit of naming your handlers, it eases debugging.
 //
@@ -10,10 +11,17 @@ const booksUi = require('./ui.js')
 // button is clicked
 const onGetBooks = function (event) {
   event.preventDefault()
+  const book = getFormFields($('#book-search'))
 
-  booksApi.index()
-  .then(booksUi.onSuccess)
-  .catch(booksUi.onError)
+  if (book.id.length === 0) {
+    booksApi.index()
+    .then(booksUi.onSuccess)
+    .catch(booksUi.onError)
+  } else {
+    booksApi.show(book.id)
+    .then(booksUi.onSuccess)
+    .catch(booksUi.onError)
+  }
 }
 
 module.exports = {
