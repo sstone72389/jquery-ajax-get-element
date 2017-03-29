@@ -1,14 +1,14 @@
-'use strict';
+'use strict'
 
-const app = require('../app.js');
+const app = require('../app.js')
 
 const index = function () {
   return $.ajax({
     url: app.host + '/books',
-    method: 'GET',
-  });
-};
+    method: 'GET'
+  })
+}
 
 module.exports = {
-  index,
-};
+  index
+}

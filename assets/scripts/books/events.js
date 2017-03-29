@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-const booksApi = require('./api.js');
-const booksUi = require('./ui.js');
+const booksApi = require('./api.js')
+const booksUi = require('./ui.js')
 
 // get in the habit of naming your handlers, it eases debugging.
 //
@@ -9,13 +9,13 @@ const booksUi = require('./ui.js');
 // beginning with 'on' to denote that it is done when the GET /books
 // button is clicked
 const onGetBooks = function (event) {
-  event.preventDefault();
+  event.preventDefault()
 
   booksApi.index()
   .then(booksUi.onSuccess)
-  .catch(booksUi.onError);
-};
+  .catch(booksUi.onError)
+}
 
 module.exports = {
-  onGetBooks,
-};
+  onGetBooks
+}
