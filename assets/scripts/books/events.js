@@ -11,19 +11,25 @@ const getFormFields = require('../../../lib/get-form-fields')
 // button is clicked
 const onGetBooks = function (event) {
   event.preventDefault()
+
+  booksApi.index()
+    .then(booksUi.onSuccess)
+    .catch(booksUi.onError)
+}
+const onGetBook = function (event) {
+  event.preventDefault()
   const book = getFormFields(event.target).book
 
-  if (book.id.length === 0) {
-    booksApi.index()
-    .then(booksUi.onSuccess)
-    .catch(booksUi.onError)
-  } else {
+  if (book.id.length != 0) {
     booksApi.show(book.id)
-    .then(booksUi.onSuccess)
-    .catch(booksUi.onError)
+      .then(booksUi.onSuccess)
+      .catch(booksUi.onError)
+  } else {
+    console.log("Please provide a book id!")
   }
 }
 
 module.exports = {
-  onGetBooks
+  onGetBooks,
+  onGetBook
 }

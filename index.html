@@ -12,12 +12,22 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
+      <h1>Book CRUD</h1>
+      <h2>Get All Books</h2>
+      <form class='books' id='books-search'>
+        <div class="form-group">
+        </div>
+        <button type="submit" class="btn btn-default">Get All Books</button>
+      </form>
+      <br />
+      <h2>Get One Book</h2>
       <form class='books' id='book-search'>
         <div class="form-group">
           <input type="text" name="book[id]" id="book-id" placeholder="Resource ID Here">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default">Get Book</button>
       </form>
+
 
     </body>
 </html>
